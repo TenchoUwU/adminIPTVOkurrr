@@ -180,35 +180,6 @@
       margin-top: 12px;
     }
 
-    .preview-box {
-      min-height: 560px;
-      border: 1px solid var(--border);
-      background: rgba(0,0,0,.22);
-      color: white;
-      border-radius: 18px;
-      padding: 18px;
-      font-size: 16px;
-      line-height: 1.65;
-      white-space: pre-line;
-    }
-
-    .preview-box a {
-      color: #67e8f9;
-      font-weight: 900;
-      text-decoration: underline;
-      text-underline-offset: 4px;
-    }
-
-    .preview-section {
-      display: block;
-      margin-bottom: 10px;
-    }
-
-    .preview-label {
-      color: #c4b5fd;
-      font-weight: 900;
-    }
-
     @media (max-width: 850px) {
       .layout { grid-template-columns: 1fr; }
       textarea { min-height: 520px; }
@@ -237,7 +208,7 @@
         <div class="fixed-box">
           <strong>Datos fijos:</strong><br>
           🌐 Servidor: http://dctv.pro:2082<br>
-          ⬇️ Código Downloader: 5179338<br>
+          ⬇️ Código Downloader: 5189338<br>
           🍎 App iOS: Smarters Player Lite<br>
           🤖 App Android: Streaming Chile IPTV Player<br>
           🎬 Solicitar contenido: https://pedidos.iptvchiledigital.cl
@@ -254,8 +225,7 @@
       </div>
 
       <div class="card">
-        <div id="preview" class="preview-box"></div>
-        <textarea id="resultado" readonly style="display:none;"></textarea>
+        <textarea id="resultado" readonly></textarea>
       </div>
     </section>
   </main>
@@ -265,7 +235,6 @@
     const password = document.getElementById('password');
     const codigoActivacion = document.getElementById('codigoActivacion');
     const resultado = document.getElementById('resultado');
-    const preview = document.getElementById('preview');
     const notice = document.getElementById('notice');
 
     const servidor = 'http://dctv.pro:2082';
@@ -309,18 +278,6 @@ ${codigoDownloader}
 
 🎬 Link para solicitar contenido:
 ${linkPedidos}`;
-
-      preview.innerHTML = `
-<span class="preview-section">📺 <strong>DATOS DE ACCESO IPTV</strong></span>
-<span class="preview-section">👤 <span class="preview-label">Usuario:</span><br>${user}</span>
-<span class="preview-section">🔒 <span class="preview-label">Contraseña:</span><br>${pass}</span>
-<span class="preview-section">🌐 <span class="preview-label">URL / Servidor:</span><br>${servidor}</span>
-<span class="preview-section">📱 <strong>Aplicaciones recomendadas</strong></span>
-<span class="preview-section">🍎 <span class="preview-label">iOS — Smarters Player Lite</span><br><a href="${appStore}" target="_blank">Descargar en App Store</a></span>
-<span class="preview-section">🤖 <span class="preview-label">Android — Streaming Chile IPTV Player</span><br><a href="${apkAndroid}" target="_blank">Descargar APK Android</a></span>
-<span class="preview-section">🔢 <span class="preview-label">Código de activación para inicio de sesión en app:</span><br>${codigo}</span>
-<span class="preview-section">⬇️ <span class="preview-label">Opción Downloader Android / TV Box / Fire TV</span><br>🔢 Código Downloader:<br>${codigoDownloader}</span>
-<span class="preview-section">🎬 <span class="preview-label">Link para solicitar contenido:</span><br><a href="${linkPedidos}" target="_blank">Solicitar contenido</a></span>`;
     }
 
     function copiarMensaje() {
